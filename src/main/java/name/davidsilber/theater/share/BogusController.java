@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
-public class GreetController {
+public class BogusController {
 
     private static final String template = "Hi, %s!";
     private final AtomicLong counter = new AtomicLong();
