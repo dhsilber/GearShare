@@ -14,14 +14,14 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static junit.framework.TestCase.assertTrue;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(value = MvcConfig.class, secure = false)
-public class MainControllerTests {
+@WebMvcTest(value = TemplateViewControllers.class, secure = false)
+public class MainPageContentTests {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void rootDisplaysIndexPage() throws Exception {
+    public void mainPageIncludesLoginForm() throws Exception {
         RequestBuilder requestBuilder = MockMvcRequestBuilders
                 .get("/")
                 .accept(MediaType.TEXT_HTML);
@@ -32,7 +32,7 @@ public class MainControllerTests {
 
 //        System.out.println("Start:"+ result.getResponse().getContentAsString()+":End");
 
-        assertTrue(result.getResponse().getContentAsString().contains("GearShare"));
+        assertTrue(result.getResponse().getContentAsString().contains("<form action=\"/login\" method=\"post\">"));
     }
 }
 
