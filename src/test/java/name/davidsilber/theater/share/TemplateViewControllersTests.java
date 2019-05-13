@@ -34,5 +34,20 @@ public class TemplateViewControllersTests {
 
         assertTrue(result.getResponse().getContentAsString().contains("GearShare"));
     }
+
+    @Test
+    public void adminDisplaysIndexPage() throws Exception {
+        RequestBuilder requestBuilder = MockMvcRequestBuilders
+                .get("/admin")
+                .accept(MediaType.TEXT_HTML);
+
+        MvcResult result = mockMvc
+                .perform(requestBuilder)
+                .andReturn();
+
+//        System.out.println("Start:"+ result.getResponse().getContentAsString()+":End");
+
+        assertTrue(result.getResponse().getContentAsString().contains("GearShare Global Settings"));
+    }
 }
 

@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.concurrent.atomic.AtomicLong;
+//import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class BogusController {
 
-    private static final String template = "Hi, %s!";
-    private final AtomicLong counter = new AtomicLong();
+//    private static final String template = "Hi, %s!";
+//    private final AtomicLong counter = new AtomicLong();
 
 //    @GetMapping("/")
 //    public String root() {
@@ -38,11 +38,11 @@ public class BogusController {
                 "</html>\n";
     }
 
-    @RequestMapping("/greeting")
-    public Greet greeting(@RequestParam(value="name", defaultValue="Y'all") String name) {
-        return new Greet(
-                counter.incrementAndGet(),
-                String.format(template, name)
-        );
-    }
+//    @RequestMapping("/greeting")
+//    public Greet greeting(@RequestParam(value="name", defaultValue="Y'all") String name) {
+//        return new Greet(
+//                counter.incrementAndGet(),
+//                String.format(template, name)
+//        );
+//    }
 }
