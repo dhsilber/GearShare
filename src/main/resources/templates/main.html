@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>GearShare for David Silber</title>
+</head>
+<body>
+<p>
+    I have a collection of gear for theatrical productions that I do
+    not get to use as often as I would like.
+    It is available to be borrowed by community theater productions
+    that I wish to support.
+</p>
+<p>
+    The cost is intended to be small enough that it will not be a
+    burden to your production, yet still be enough to help me pay
+    for the cost and upkeep for the gear.
+    If your production is truly running on a shoestring, check with
+    me anyhow &mdash; I may be able to help.
+</p>
+<p>
+    Select the items you wish to borrow and indicate when you want to
+    use them.
+    This system will generate a letter for me with the specifics of
+    what you want.
+</p>
+<form th:action="@{/request}" method="post">
+    <div><label> Start date: <input type="date" name="start"/> </label></div>
+    <div><label> End date  : <input type="date" name="end"/> </label></div>
+    <div>
+        <table />
+    </div>
+    <div><input type="submit" value="Send Request"/></div>
+</form>
+</body>
+</html>

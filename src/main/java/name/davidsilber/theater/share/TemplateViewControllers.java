@@ -11,7 +11,7 @@ class TemplateViewControllers implements WebMvcConfigurer {
 //        registry.addViewController("/home").setViewName("home");
         registry.addViewController("/").setViewName("root");
         registry.addViewController("/admin").setViewName("admin");
-//        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/main").setViewName("main");
     }
 
 }
