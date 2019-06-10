@@ -27,7 +27,6 @@ public class RootPageContentTests {
 
     @BeforeAll
     public void setup() throws Exception {
-        System.out.println("Beginning------------");
         RequestBuilder requestBuilder = MockMvcRequestBuilders
                 .get("/")
                 .accept(MediaType.TEXT_HTML);
@@ -52,6 +51,24 @@ public class RootPageContentTests {
     @Test
     public void mainPageIncludesPasswordInput() throws Exception {
         assertTrue(result.getResponse().getContentAsString().contains("<input type=\"password\" name=\"password\"/>"));
+    }
+
+    @Test
+    public void mainPageIncludesProgramIntroText() throws Exception {
+        String programIntro = "his is an instance of GearShare";
+        assertTrue(result.getResponse().getContentAsString().contains(programIntro));
+    }
+
+    @Test
+    public void mainPageIncludesGitHubUrl() throws Exception {
+        String githubUrl = "https://github.com/dhsilber/GearShare";
+        assertTrue(result.getResponse().getContentAsString().contains(githubUrl));
+    }
+
+    @Test
+    public void mainPageIncludesExplanationText() throws Exception {
+        String explanation = "for sharing theatrical gear";
+        assertTrue(result.getResponse().getContentAsString().contains(explanation));
     }
 }
 
